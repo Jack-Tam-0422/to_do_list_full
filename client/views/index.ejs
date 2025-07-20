@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Journey</title>
+    <link rel="stylesheet" href="./statics/style.css" />
+  </head>
+  <body>
+    <h2>My Happy Journey</h2>
+    <div class="input-section">
+      <input type="text" id="todo-input" placeholder="Add a new task..." />
+      <button id="add-btn">Add</button>
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Completed</th>
+        <th>Created At</th>
+      </tr>
+      <% todos.forEach(todo => { %>
+      <tr>
+        <td><%= todo.id %></td>
+        <td><%= todo.task %></td>
+        <td>
+          <button
+            class="toggle-btn"
+            data-id="<%= todo.id %>"
+            data-completed="<%= todo.completed %>"
+          >
+            <%= todo.completed ? 'Yes' : 'No' %>
+          </button>
+        </td>
+        <td><%= new Date(todo.created_at).toLocaleString() %></td>
+      </tr>
+      <% }) %>
+    </table>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
