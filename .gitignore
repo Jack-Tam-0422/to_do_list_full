@@ -1,6 +1,3 @@
 .DS_Store
 node_modules/
-client/views/login.ejs
-client/views/signup.ejs
-
-
+.env
